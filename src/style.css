@@ -149,3 +149,71 @@ nav, section { position: relative; z-index: 1; }
   transition: opacity 0.3s;
 }
 .buy-btn:hover { opacity: 0.85; }
+
+.footer {
+  position: relative;
+  z-index: 1;
+  background: rgba(5,15,8,0.95);
+  border-top: 1px solid rgba(22,163,74,0.3);
+  padding: 4rem 2rem 2rem;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+}
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--accent2);
+  margin-bottom: 1rem;
+}
+.footer-brand p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.footer-links h4,
+.footer-social h4,
+.footer-contact h4 {
+  color: var(--text);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.footer-links ul,
+.footer-social ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.footer-links a,
+.footer-social a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+.footer-links a:hover,
+.footer-social a:hover { color: var(--accent2); }
+.footer-contact p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(22,163,74,0.2);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
