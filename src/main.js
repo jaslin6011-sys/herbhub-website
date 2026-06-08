@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
   // 5. Burst ring expands
   .to('.burst-ring', {
     opacity: 1, scale: 8,
-    borderColor: 'rgba(74,222,128,0)',
+    borderColor: 'rgba(255,80,80,0)',
     duration: 0.7, ease: 'power2.out'
   }, '<0.1')
 
