@@ -1,7 +1,7 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --bg: #071810;
+  --bg: #0d2518;
   --accent: #16a34a;
   --accent2: #4ade80;
   --text: #f1f5f9;
@@ -100,7 +100,7 @@ nav, section, .wave-divider, footer { position: relative; z-index: 1; }
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 4rem;
-  background: rgba(7,24,16,0.75);
+  background: rgba(13,37,24,0.75);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(22,163,74,0.15);
   z-index: 100;
