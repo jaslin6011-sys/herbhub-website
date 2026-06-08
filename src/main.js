@@ -212,6 +212,25 @@ gsap.from('.testimonial-card', {
   duration: 0.7, stagger: 0.15, ease: 'power3.out'
 })
 
+// ── FAQ Accordion ──
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement
+    const isOpen = item.classList.contains('open')
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'))
+    if (!isOpen) item.classList.add('open')
+  })
+})
+
+gsap.from('#faq .section-title', {
+  scrollTrigger: { trigger: '#faq', start: 'top 75%' },
+  opacity: 0, y: 30, duration: 0.8
+})
+gsap.from('.faq-item', {
+  scrollTrigger: { trigger: '#faq', start: 'top 65%' },
+  opacity: 0, y: 40, duration: 0.6, stagger: 0.1, ease: 'power3.out'
+})
+
 // ── Hamburger Menu ──
 const hamburger = document.getElementById('hamburger')
 const navMenu = document.getElementById('nav-menu')

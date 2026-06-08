@@ -360,6 +360,59 @@ nav, section, .wave-divider, footer { position: relative; z-index: 1; }
   gap: 1rem;
 }
 
+/* ── FAQ ── */
+.faq-list {
+  width: 100%;
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.faq-item {
+  border: 1px solid rgba(22,163,74,0.2);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: rgba(255,255,255,0.02);
+  transition: border-color 0.3s;
+}
+.faq-item.open { border-color: var(--accent2); }
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.25rem 1.5rem;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+.faq-question:hover { color: var(--accent2); }
+.faq-icon {
+  font-size: 1.4rem;
+  color: var(--accent2);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+}
+.faq-answer p {
+  padding: 0 1.5rem 1.25rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.faq-item.open .faq-answer { max-height: 200px; }
+
 /* ── Trust Badges ── */
 .trust-section {
   position: relative;
