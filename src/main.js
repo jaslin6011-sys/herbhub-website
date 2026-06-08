@@ -197,6 +197,11 @@ gsap.from('.contact-email', {
   opacity: 0, duration: 0.8, delay: 0.3
 })
 
+gsap.from('.badge', {
+  scrollTrigger: { trigger: '.trust-section', start: 'top 80%' },
+  opacity: 0, y: 30, duration: 0.6, stagger: 0.1, ease: 'power3.out'
+})
+
 gsap.from('#testimonials .section-title', {
   scrollTrigger: { trigger: '#testimonials', start: 'top 75%' },
   opacity: 0, y: 30, duration: 0.8

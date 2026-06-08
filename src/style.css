@@ -360,6 +360,44 @@ nav, section, .wave-divider, footer { position: relative; z-index: 1; }
   gap: 1rem;
 }
 
+/* ── Trust Badges ── */
+.trust-section {
+  position: relative;
+  z-index: 1;
+  padding: 2.5rem 2rem;
+  background: rgba(22,163,74,0.05);
+  border-top: 1px solid rgba(22,163,74,0.1);
+  border-bottom: 1px solid rgba(22,163,74,0.1);
+}
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.2rem 1.8rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(22,163,74,0.15);
+  background: rgba(255,255,255,0.02);
+  min-width: 150px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.badge:hover {
+  border-color: var(--accent2);
+  transform: translateY(-4px);
+}
+.badge-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.badge strong { font-size: 0.9rem; color: var(--text); margin-bottom: 0.25rem; }
+.badge p { font-size: 0.75rem; color: var(--muted); }
+
 /* ── Testimonials ── */
 .testimonials-grid {
   display: grid;
