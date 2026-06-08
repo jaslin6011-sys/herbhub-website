@@ -17,8 +17,8 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Loading Screen ── */
-#loader {
+/* ── Capsule Intro ── */
+#capsule-intro {
   position: fixed;
   inset: 0;
   background: #050f08;
@@ -27,27 +27,73 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  overflow: hidden;
 }
-.loader-ring {
-  width: 70px;
-  height: 70px;
-  border: 3px solid rgba(74,222,128,0.15);
-  border-top-color: var(--accent2);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 1.5rem;
+.capsule-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
 }
-@keyframes spin { to { transform: rotate(360deg); } }
-.loader-logo {
-  font-size: 2rem;
+.capsule-top {
+  width: 90px;
+  height: 110px;
+  background: linear-gradient(160deg, #22c55e 0%, #16a34a 50%, #15803d 100%);
+  border-radius: 45px 45px 0 0;
+  position: relative;
+  box-shadow: inset -8px -8px 20px rgba(0,0,0,0.3), 0 0 40px rgba(74,222,128,0.3);
+  overflow: hidden;
+}
+.capsule-shine {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  width: 28px;
+  height: 55px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, transparent 100%);
+  border-radius: 14px;
+  transform: rotate(-8deg);
+}
+.capsule-seam {
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, #0d6630, #4ade80, #0d6630);
+  box-shadow: 0 0 12px rgba(74,222,128,0.6);
+}
+.capsule-bottom {
+  width: 90px;
+  height: 110px;
+  background: linear-gradient(160deg, #4ade80 0%, #22c55e 40%, #16a34a 100%);
+  border-radius: 0 0 45px 45px;
+  box-shadow: inset -8px 8px 20px rgba(0,0,0,0.2), 0 0 40px rgba(74,222,128,0.2);
+}
+.capsule-brand {
+  position: absolute;
+  text-align: center;
+  opacity: 0;
+  z-index: 3;
+}
+.capsule-logo {
+  font-size: 2.8rem;
   font-weight: 900;
   color: var(--accent2);
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 30px rgba(74,222,128,0.5);
 }
-.loader-sub {
+.capsule-tagline {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-top: 0.5rem;
+}
+.burst-ring {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgba(74,222,128,0.5);
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 1;
 }
 
 /* ── 3D Canvas ── */
@@ -595,9 +641,12 @@ nav, section, .wave-divider, footer { position: relative; z-index: 1; }
   .footer-links ul, .footer-social ul { align-items: center; }
   .footer-bottom { flex-direction: column; text-align: center; }
 
-  /* Loader */
-  .loader-ring { width: 55px; height: 55px; }
-  .loader-logo { font-size: 1.6rem; }
+  /* Capsule */
+  .capsule-top, .capsule-bottom { width: 70px; height: 85px; }
+  .capsule-seam { width: 70px; }
+  .capsule-top { border-radius: 35px 35px 0 0; }
+  .capsule-bottom { border-radius: 0 0 35px 35px; }
+  .capsule-logo { font-size: 2rem; }
 
   /* Glow orbs smaller on mobile */
   .orb-1 { width: 250px; height: 250px; }

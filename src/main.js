@@ -5,19 +5,44 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// ── Loading Screen Exit ──
+// ── Capsule Opening Animation ──
 window.addEventListener('load', () => {
-  gsap.to('#loader', {
-    opacity: 0,
-    scale: 1.05,
-    duration: 0.8,
-    delay: 1.2,
-    ease: 'power2.inOut',
+  const tl = gsap.timeline({
     onComplete: () => {
-      document.getElementById('loader').style.display = 'none'
+      document.getElementById('capsule-intro').style.display = 'none'
       startHeroAnimation()
     }
   })
+
+  // 1. Capsule drops in
+  tl.from('.capsule-wrap', { y: -400, opacity: 0, duration: 0.7, ease: 'bounce.out' })
+
+  // 2. Gentle wobble
+  .to('.capsule-wrap', { rotation: 6, duration: 0.12, ease: 'power1.inOut' })
+  .to('.capsule-wrap', { rotation: -6, duration: 0.12, ease: 'power1.inOut' })
+  .to('.capsule-wrap', { rotation: 3, duration: 0.1 })
+  .to('.capsule-wrap', { rotation: 0, duration: 0.1 })
+
+  // 3. Seam glows brighter
+  .to('.capsule-seam', { boxShadow: '0 0 30px rgba(74,222,128,1)', duration: 0.3 })
+
+  // 4. Capsule cracks open — top flies up, bottom drops down
+  .to('.capsule-top', { y: -260, rotation: -12, opacity: 0, duration: 0.65, ease: 'power3.in' }, '+=0.2')
+  .to('.capsule-bottom', { y: 260, rotation: 12, opacity: 0, duration: 0.65, ease: 'power3.in' }, '<')
+
+  // 5. Burst ring expands
+  .to('.burst-ring', {
+    opacity: 1, scale: 8,
+    borderColor: 'rgba(74,222,128,0)',
+    duration: 0.7, ease: 'power2.out'
+  }, '<0.1')
+
+  // 6. Brand name pops in
+  .to('.capsule-brand', { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.7)' }, '<0.2')
+  .from('.capsule-brand', { scale: 0.5 }, '<')
+
+  // 7. Hold for a moment then fade out
+  .to('#capsule-intro', { opacity: 0, duration: 0.6, ease: 'power2.inOut' }, '+=0.6')
 })
 
 // ── Three.js Setup ──
