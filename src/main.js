@@ -197,6 +197,16 @@ gsap.from('.contact-email', {
   opacity: 0, duration: 0.8, delay: 0.3
 })
 
+gsap.from('#testimonials .section-title', {
+  scrollTrigger: { trigger: '#testimonials', start: 'top 75%' },
+  opacity: 0, y: 30, duration: 0.8
+})
+gsap.from('.testimonial-card', {
+  scrollTrigger: { trigger: '#testimonials', start: 'top 65%' },
+  opacity: 0, y: 60, scale: 0.95,
+  duration: 0.7, stagger: 0.15, ease: 'power3.out'
+})
+
 // ── Hamburger Menu ──
 const hamburger = document.getElementById('hamburger')
 const navMenu = document.getElementById('nav-menu')
