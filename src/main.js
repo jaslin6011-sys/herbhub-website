@@ -256,6 +256,18 @@ gsap.from('.faq-item', {
   opacity: 0, y: 40, duration: 0.6, stagger: 0.1, ease: 'power3.out'
 })
 
+// ── Discount Banner Close ──
+document.getElementById('bannerClose').addEventListener('click', () => {
+  const banner = document.querySelector('.discount-banner')
+  gsap.to(banner, {
+    height: 0, opacity: 0, padding: 0, duration: 0.4, ease: 'power2.in',
+    onComplete: () => {
+      banner.style.display = 'none'
+      document.querySelector('.navbar').style.top = '0'
+    }
+  })
+})
+
 // ── Hamburger Menu ──
 const hamburger = document.getElementById('hamburger')
 const navMenu = document.getElementById('nav-menu')
