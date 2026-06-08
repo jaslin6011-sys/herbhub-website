@@ -150,6 +150,61 @@ nav, section { position: relative; z-index: 1; }
 }
 .buy-btn:hover { opacity: 0.85; }
 
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(22,163,74,0.3);
+  border-radius: 0.75rem;
+  color: var(--text);
+  font-size: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  outline: none;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent2);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--muted);
+}
+.submit-btn {
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s;
+  align-self: flex-start;
+}
+.submit-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+.contact-email {
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.contact-email a {
+  color: var(--accent2);
+  text-decoration: none;
+}
+
 .footer {
   position: relative;
   z-index: 1;
