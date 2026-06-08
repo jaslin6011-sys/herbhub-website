@@ -197,6 +197,20 @@ gsap.from('.contact-email', {
   opacity: 0, duration: 0.8, delay: 0.3
 })
 
+// ── Hamburger Menu ──
+const hamburger = document.getElementById('hamburger')
+const navMenu = document.getElementById('nav-menu')
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open')
+  navMenu.classList.toggle('open')
+})
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open')
+    navMenu.classList.remove('open')
+  })
+})
+
 // ── Resize ──
 window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight
